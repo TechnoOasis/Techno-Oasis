@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>ТехноОазис - Інтернет-магазин</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Ваші CSS файли -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Вбудовані CSS бібліотеки -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f2f2f2; /* Світло-сірий фон */
+        }
+
+        .special-font {
+            color: #333; /* Темно-сірий колір */
+            font-weight: bold;
+        }
+
+        .special-background {
+            background-color: #ddd; /* Світло-сірий фон для областей з текстом */
+        }
+
+        .search {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ======= Пошукова строка ======= -->
+    <section id="search" class="search">
+        <div class="container">
+            <form action="/search" method="GET">
+                <input type="text" name="query" placeholder="Пошук товарів за ключовими словами...">
+                <select name="category">
+                    <option value="">Всі категорії</option>
+                    <option value="electronics">Електроніка</option>
+                    <option value="home_appliances">Побутова техніка</option>
+                    <option value="clothing">Одяг</option>
+                    <!-- Додайте інші категорії за потребою -->
+                </select>
+                <label for="sort">Сортувати за ціною:</label>
+                <select name="sort" id="sort">
+                    <option value="asc">За зростанням</option>
+                    <option value="desc">За спаданням</option>
+                </select>
+                <button type="submit">Пошук</button>
+            </form>
+        </div>
+    </section><!-- End Search Section -->
+
+    <!-- ======= Шапка ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <h1 class="logo"><a href="index.html">ТехноОазис - Інтернет-магазин</a></h1>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Головна</a></li>
+                    <li><a class="nav-link scrollto" href="#shop">В магазин</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Про нас</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Послуги</a></li>
+                    <li><a class="nav-link scrollto" href="#portfolio">Портфоліо</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Команда</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Контакти</a></li>
+                    <li><a class="nav-link scrollto" href="#settings">Налаштування</a></li>
+                    <li><a class="nav-link scrollto" href="#admin-login">Вхід</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Головна сторінка ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container">
+            <h1>Ласкаво просимо в ТехноОазис</h1>
+            <h2>Ми пропонуємо широкий вибір товарів для вашого комфорту</h2>
+            <a href="#about" class="btn-get-started scrollto">Дізнатися більше</a>
+        </div>
+    </section><!-- End Hero -->
+
+    <!-- ======= Магазин ======= -->
+    <section id="shop" class="shop">
+        <!-- Код магазину -->
+        <ul>
+            <li><a href="#shop-category-1">Автотовары</a></li>
+            <li><a href="#shop-category-2">Все для кухни</a></li>
+            <li><a href="#shop-category-3">Колонки и акустика</a></li>
+            <li><a href="#shop-category-4">Косметика</a></li>
+            <li><a href="#shop-category-5">Красота и здоровье</a></li>
+            <li><a href="#shop-category-6">Мобильные аксессуары</a></li>
+            <li><a href="#shop-category-7">Наушники и гарнитура</a></li>
+            <li><a href="#shop-category-8">Обувь</a></li>
+            <li><a href="#shop-category-9">Спорт, здоровье, отдых</a></li>
+            <li><a href="#shop-category-10">Сумки, клатчи, кошельки, очки</a></li>
+            <li><a href="#shop-category-11">Товары для детей</a></li>
+            <li><a href="#shop-category-12">Товары для дома и сада</a></li>
+            <li><a href="#shop-category-13">Товары для животных</a></li>
+            <li><a href="#shop-category-14">Фонари, лампы, зажигалки</a></li>
+            <li><a href="#shop-category-15">Часы, смарт, фитнес браслеты</a></li>
+            <li><a href="#shop-category-16">Электроника</a></li>
+        </ul>
+
+        <!-- Код для відображення товарів із Google Таблиці -->
+        <iframe src="https://sheetdb.io/api/v1/djrs15yods2n4" width="100%" height="600" frameborder="0" style="background: transparent; border: 1px solid #dedede;"></iframe>
+
+        <!-- Форма завантаження товарів -->
+        <div class="container special-background">
+            <h3 class="special-font">Завантажити товари:</h3>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" multiple>
+                <input type="submit" value="Завантажити">
+            </form>
+        </div>
+    </section><!-- End Shop Section -->
+
+    <!-- ======= Про нас ======= -->
+    <section id="about" class="about">
+        <!-- Код розділу "Про нас" -->
+    </section><!-- End About Section -->
+
+    <!-- ======= Послуги ======= -->
+    <section id="services" class="services">
+        <!-- Код розділу "Послуги" -->
+    </section><!-- End Services Section -->
+
+    <!-- ======= Портфоліо ======= -->
+    <section id="portfolio" class="portfolio">
+        <!-- Код розділу "Портфоліо" -->
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Команда ======= -->
+    <section id="team" class="team">
+        <!-- Код розділу "Команда" -->
+    </section><!-- End Team Section -->
+
+    <!-- ======= Контакти ======= -->
+    <section id="contact" class="contact">
+        <!-- Код розділу "Контакти" -->
+    </section><!-- End Contact Section -->
+
+    <!-- ======= Налаштування ======= -->
+    <section id="settings" class="settings">
+        <!-- Код розділу "Налаштування" -->
+        <div class="container special-background">
+            <h3 class="special-font">Умови доставки:</h3>
+            <p>Умови доставки Укрпошта на поштові відділення по повній предоплаті, Нова пошта на поштові відділення та поштомати.</p>
+            <h3 class="special-font">Спосіб оплати:</h3>
+            <p>Укрпошта по повній предоплаті. Нова пошта накладений платіж, часткова чи повна предоплата на картку, після замовлення для уточнення замовлення вам перетелефонують і надішлють реквізіти для оплати карткою.</p>
+        </div>
+    </section><!-- End Settings Section -->
+
+    <!-- ======= Адміністративний вхід ======= -->
+    <section id="admin-login" class="admin-login">
+        <!-- Код блоку адміністративного входу -->
+        <div class="container special-background">
+            <h3 class="special-font">Адміністративний вхід:</h3>
+            <form action="/admin-login" method="POST">
+                <input type="text" name="username" placeholder="Логін" required>
+                <input type="password" name="password" placeholder="Пароль" required>
+                <button type="submit">Увійти</button>
+            </form>
+        </div>
+    </section><!-- End Admin Login Section -->
+
+    <!-- ======= Зв'язок з нами ======= -->
+    <section id="contact-us" class="contact-us">
+        <!-- Код блоку зв'язку з нами -->
+    </section><!-- End Contact Us Section -->
+
+    <!-- ======= Підвал ======= -->
+    <footer id="footer">
+        <!-- Код підвалу -->
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Ваші JS файли -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Вбудовані JS бібліотеки -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+</body>
+
+</html>
